@@ -1,24 +1,26 @@
 // complete this js code
 function Person(name, age) {
-	this.Name=name;
-	this.Age=age;
+	this.name=name;
+	this.age=age;
 	this.greet=function(){
-		console.log(`Hello, my name is ${this.Name}, I am ${this.Age} years old.`);
+		console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`);
 	}
 }
 
-function Employee extends Person(name, age, jobTitle) {
-	super(name,age);
-	this.jobTitle=jobTitle;
-	this.jobGreet=function () {
-		console.log(`Hello, my name is ${this.Name}, I am ${this.Age} years old, and my job title is ${this.jobTitle}.`);
+function Employee(name, age, jobTitle) {
+	Person.call(this,name,age);
+this.jobTitle=jobTitle;
+ this.jobGreet=function () {
+		console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}.`);
 	}
 }
+//Employee.prototype=new Person();
+
 const Alice=new Person("Alice",25);
-Alice.greet;
-const Bod=new Employee("Bob",30,"Manager");
-Bob.jobGreet;
-
+Alice.greet();
+const Bob=new Employee("Bob",33,"Manager");
+Bob.greet();
+Bob.jobGreet();
 // Do not change code below this line
 window.Person = Person;
 window.Employee = Employee;
