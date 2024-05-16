@@ -18,8 +18,7 @@ this.jobTitle=jobTitle;
 
 const Alice=new Person("Alice",25);
 Alice.greet();
-const Bob=new Employee("Bob",33,"Manager");
-Bob.greet();
+const Bob=new Employee("Bob",30,"Manager");
 Bob.jobGreet();
 // Do not change code below this line
 window.Person = Person;
